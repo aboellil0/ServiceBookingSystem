@@ -2,7 +2,7 @@
 @model RegisterViewModel
 
 <!-- Section: Design Block -->
-<section class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+<section class="d-flex align-items-center justify-content-center mb-5" style="height: 100vh; min-height:fit-content;">
     <div class="card shadow-5-strong bg-white" style="
         width: 90%; /* Take most of the page */
         max-width: 600px; /* Max width */
@@ -81,21 +81,23 @@
                 </div>
 
                 <!-- National ID input for Technical only -->
-                <div id="technicalFields" style="display: none;">
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="text" asp-for="NationalID" class="form-control" required />
-                        <label class="form-label" asp-for="NationalID"></label>
-                        <span asp-validation-for="NationalID" class="text-danger"></span>
-                    </div>
+               @*  @if (Model.IsTechnician)
+                {
+                    <div id="technicalFields" style="display: none;">
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="text" asp-for="NationalID" class="form-control" required />
+                            <label class="form-label" asp-for="NationalID"></label>
+                            <span asp-validation-for="NationalID" class="text-danger"></span>
+                        </div>
 
-                    <!-- Job Title input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="text" asp-for="JobTitle" class="form-control" required />
-                        <label class="form-label" asp-for="JobTitle"></label>
-                        <span asp-validation-for="JobTitle" class="text-danger"></span>
+                        <!-- Job Title input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="text" asp-for="JobTitle" class="form-control" required />
+                            <label class="form-label" asp-for="JobTitle"></label>
+                            <span asp-validation-for="JobTitle" class="text-danger"></span>
+                        </div>
                     </div>
-                </div>
-
+                } *@
                 <!-- Submit button -->
                 <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary w-100 btn-block mb-4">
                     Register
